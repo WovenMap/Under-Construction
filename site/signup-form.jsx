@@ -704,7 +704,6 @@ function SignupForm({ endpointUrl, ctaLabel, ctaPlaceholder }) {
                 value={data.email}
                 onChange={(v) => set("email", v)}
                 placeholder={ctaPlaceholder || "your email"}
-                autoFocus
                 required
               />
             </div>
