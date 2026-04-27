@@ -118,7 +118,7 @@ function TextInput({ value, onChange, type = "text", placeholder, autoFocus, req
   );
 }
 
-function ChipGroup({ options, value, onChange, multi = false }) {
+function ChipGroup({ options, value, onChange, multi = false, gridCols = null }) {
   const isSelected = (v) => (multi ? value.includes(v) : value === v);
   const toggle = (v) => {
     if (multi) {
@@ -128,8 +128,11 @@ function ChipGroup({ options, value, onChange, multi = false }) {
       onChange(v);
     }
   };
+  const containerStyle = gridCols
+    ? { display: "grid", gridTemplateColumns: `repeat(${gridCols}, 1fr)`, gap: 8 }
+    : { display: "flex", flexWrap: "wrap", gap: 8 };
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+    <div style={containerStyle}>
       {options.map((opt) => {
         const v = typeof opt === "string" ? opt : opt.value;
         const label = typeof opt === "string" ? opt : opt.label;
@@ -150,6 +153,8 @@ function ChipGroup({ options, value, onChange, multi = false }) {
               fontSize: 13,
               letterSpacing: "-0.005em",
               cursor: "pointer",
+              textAlign: "center",
+              whiteSpace: "nowrap",
               transition: "all 180ms ease",
             }}
             onMouseEnter={(e) => {
@@ -172,55 +177,53 @@ function FeatureCheck({ feature, checked, onToggle }) {
     <button
       type="button"
       onClick={onToggle}
+      title={feature.blurb}
       style={{
         display: "flex",
-        alignItems: "flex-start",
-        gap: 14,
+        alignItems: "center",
+        justifyContent: "flex-start",
+        gap: 10,
         width: "100%",
         textAlign: "left",
-        padding: "14px 16px",
-        background: checked ? "rgba(201,161,106,0.08)" : "transparent",
+        padding: "11px 14px",
+        background: checked ? "rgba(201,161,106,0.10)" : "transparent",
         border: `1px solid ${checked ? SF_P.accent : SF_P.fieldBorder}`,
         borderRadius: 2,
         cursor: "pointer",
         transition: "all 180ms ease",
-        color: SF_P.ink,
+        color: checked ? SF_P.ink : SF_P.inkSoft,
         fontFamily: "'Inter', sans-serif",
+        fontSize: 13,
+        fontWeight: checked ? 400 : 300,
+        letterSpacing: "-0.005em",
       }}
       onMouseEnter={(e) => {
-        if (!checked) e.currentTarget.style.borderColor = SF_P.accent;
+        if (!checked) {
+          e.currentTarget.style.borderColor = SF_P.accent;
+          e.currentTarget.style.color = SF_P.ink;
+        }
       }}
       onMouseLeave={(e) => {
-        if (!checked) e.currentTarget.style.borderColor = SF_P.fieldBorder;
+        if (!checked) {
+          e.currentTarget.style.borderColor = SF_P.fieldBorder;
+          e.currentTarget.style.color = SF_P.inkSoft;
+        }
       }}
     >
       <span
         aria-hidden
         style={{
-          marginTop: 2,
-          width: 16,
-          height: 16,
-          borderRadius: 2,
-          border: `1px solid ${checked ? SF_P.accent : SF_P.fieldBorder}`,
-          background: checked ? SF_P.accent : "transparent",
-          color: "#0a1020",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          fontSize: 12,
+          width: 6,
+          height: 6,
+          borderRadius: 999,
           flexShrink: 0,
+          background: checked ? SF_P.accent : "transparent",
+          border: `1px solid ${checked ? SF_P.accent : SF_P.fieldBorder}`,
           transition: "all 180ms ease",
         }}
-      >
-        {checked ? "✓" : ""}
-      </span>
-      <span style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-        <span style={{ fontSize: 14, fontWeight: 400, letterSpacing: "-0.005em" }}>
-          {feature.label}
-        </span>
-        <span style={{ fontSize: 12, fontWeight: 300, color: SF_P.inkSoft, fontStyle: "italic" }}>
-          {feature.blurb}
-        </span>
+      />
+      <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+        {feature.label}
       </span>
     </button>
   );
@@ -286,7 +289,7 @@ function StepShell({ step, totalSteps, title, subtitle, children, footer }) {
         )}
       </div>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>{children}</div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>{children}</div>
 
       {footer && (
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
@@ -653,14 +656,15 @@ function SignupForm({ endpointUrl, ctaLabel, ctaPlaceholder }) {
         onSubmit={submit}
         style={{
           width: "100%",
-          maxWidth: 560,
+          maxWidth: 540,
           margin: "0 auto",
-          padding: "32px 32px 28px",
-          background: "rgba(7,12,24,0.55)",
+          padding: "28px 32px 24px",
+          background: "linear-gradient(180deg, rgba(20,28,48,0.55) 0%, rgba(7,12,24,0.65) 100%)",
           border: `1px solid ${SF_P.rule}`,
-          borderRadius: 3,
-          backdropFilter: "blur(6px)",
-          WebkitBackdropFilter: "blur(6px)",
+          borderRadius: 4,
+          boxShadow: "0 20px 60px rgba(0,0,0,0.35)",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
           textAlign: "left",
         }}
       >
@@ -731,21 +735,13 @@ function SignupForm({ endpointUrl, ctaLabel, ctaPlaceholder }) {
               </>
             }
           >
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               <FieldLabel>Age range</FieldLabel>
               <ChipGroup
                 options={AGE_RANGES}
                 value={data.ageRange}
                 onChange={(v) => set("ageRange", v)}
-              />
-            </div>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              <FieldLabel>Where in life are you?</FieldLabel>
-              <ChipGroup
-                options={LIFE_STAGES}
-                value={data.lifeStage}
-                onChange={(v) => set("lifeStage", v)}
+                gridCols={6}
               />
             </div>
 
@@ -767,6 +763,15 @@ function SignupForm({ endpointUrl, ctaLabel, ctaPlaceholder }) {
                 />
               </div>
             </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              <FieldLabel>Where in life are you?</FieldLabel>
+              <ChipGroup
+                options={LIFE_STAGES}
+                value={data.lifeStage}
+                onChange={(v) => set("lifeStage", v)}
+              />
+            </div>
           </StepShell>
         )}
 
@@ -787,7 +792,7 @@ function SignupForm({ endpointUrl, ctaLabel, ctaPlaceholder }) {
           >
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               <FieldLabel hint="Tick any that ring true — or none.">Areas of life</FieldLabel>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 8 }}>
                 {FEATURES.map((f) => (
                   <FeatureCheck
                     key={f.id}

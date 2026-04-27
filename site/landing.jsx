@@ -209,7 +209,7 @@ function Whisper() {
         style={{
           display: "flex",
           whiteSpace: "nowrap",
-          animation: "wm-whisper 90s linear infinite",
+          animation: "wm-whisper 240s linear infinite",
           fontFamily: "'Inter', sans-serif",
           fontWeight: 300,
           fontSize: 12,
@@ -287,7 +287,7 @@ function App() {
         {/* Top bar — wordmark only, small */}
         <header
           style={{
-            padding: "32px 40px",
+            padding: "20px 40px 8px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -322,24 +322,24 @@ function App() {
             alignItems: "center",
             justifyContent: "flex-start",
             textAlign: "center",
-            padding: "40px 28px 160px",
-            gap: 48,
+            padding: "8px 28px 140px",
+            gap: 28,
             position: "relative",
             zIndex: 2,
           }}
         >
           <div className="wm-fade-2">
-            <LivingMark size={240} rotationSpeed={t.rotationSpeed} haze={t.haze} ink={P.accent} />
+            <LivingMark size={170} rotationSpeed={t.rotationSpeed} haze={t.haze} ink={P.accent} />
           </div>
 
-          <div style={{ maxWidth: 720, display: "flex", flexDirection: "column", alignItems: "center", gap: 28 }}>
+          <div style={{ maxWidth: 720, display: "flex", flexDirection: "column", alignItems: "center", gap: 18 }}>
             <h1
               className="wm-fade-3"
               style={{
                 fontFamily: "'Fraunces', Georgia, serif",
                 fontWeight: 300,
                 fontVariationSettings: '"opsz" 144',
-                fontSize: "clamp(36px, 5.5vw, 64px)",
+                fontSize: "clamp(30px, 4.5vw, 52px)",
                 lineHeight: 1.08,
                 letterSpacing: "-0.02em",
                 margin: 0,
