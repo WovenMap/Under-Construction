@@ -320,10 +320,10 @@ function App() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "flex-start",
             textAlign: "center",
-            padding: "20px 28px 140px",
-            gap: 56,
+            padding: "40px 28px 160px",
+            gap: 48,
             position: "relative",
             zIndex: 2,
           }}
