@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>WovenMap — brand &amp; identity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* DAY · editorial */
+  --paper:#faf6ee;
+  --paper-2:#f1ebdc;
+  --ink:#1a1612;
+  --ink-soft:#4a423a;
+  --ink-mute:#6b6357;
+  --amber:#c2761b;
+  /* NIGHT · hero */
+  --midnight:#0e1729;
+  --midnight-2:#172238;
+  --cream:#f4ede0;
+  --champagne:#c9a16a;
+  --champagne-deep:#a8884c;
+  /* lens accents (kept) */
+  --rose:#c2557a;
+  --rust:#a05a2c;
+  --teal:#2d6e6a;
+  --moss:#6b7d4a;
+  --line:rgba(26,22,18,.12);
+  --line-soft:rgba(26,22,18,.06);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Newsreader",ui-serif,Georgia,serif;
+  font-weight:400;font-variation-settings:"opsz" 16;
+  font-size:17px;line-height:1.65;color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+::selection{background:var(--champagne);color:var(--midnight)}
+
+/* ====== HERO (dark) ====== */
+.hero{
+  background:radial-gradient(ellipse at top, #1a253f 0%, var(--midnight) 60%);
+  color:var(--cream);
+  min-height:100vh;
+  padding:80px 64px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(201,161,106,.04) 0, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(201,161,106,.06) 0, transparent 50%);
+  pointer-events:none;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.4fr 1fr;gap:64px;
+  max-width:1280px;margin:0 auto;align-items:center;min-height:80vh;
+  position:relative;z-index:2;
+}
+.hero .lockup{display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+.hero .mark-large{width:180px;height:180px;flex-shrink:0}
+.hero .wordmark{
+  font-family:"Inter",sans-serif;font-weight:200;
+  font-size:clamp(56px,9vw,128px);line-height:.95;letter-spacing:-.04em;
+}
+.hero .wordmark .w{color:var(--cream)}
+.hero .wordmark .m{color:var(--champagne)}
+.hero .tag{
+  margin-top:48px;display:flex;align-items:center;gap:16px;
+  font-family:"Inter",sans-serif;font-weight:300;
+  font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--champagne);
+}
+.hero .tag .ln{height:1px;background:rgba(201,161,106,.4);width:80px}
+.hero h1{
+  font-family:"Fraunces",serif;font-weight:300;
+  font-variation-settings:"opsz" 144;
+  font-size:clamp(36px,4.4vw,60px);line-height:1.05;
+  letter-spacing:-.022em;margin:64px 0 24px;
+  color:var(--cream);max-width:600px;
+}
+.hero h1 .it{font-style:italic;color:var(--champagne)}
+.hero .lede{
+  font-family:"Fraunces",serif;font-weight:300;
+  font-variation-settings:"opsz" 24;
+  font-size:1.2rem;line-height:1.55;color:rgba(244,237,224,.7);
+  max-width:540px;margin:0;
+}
+
+.hero .meta-strip{
+  margin-top:64px;padding-top:32px;
+  border-top:1px solid rgba(201,161,106,.2);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  font-family:"IBM Plex Mono",monospace;
+}
+.hero .meta-strip .k{
+  font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--champagne);
+}
+.hero .meta-strip .v{
+  font-family:"Fraunces",serif;font-style:italic;font-weight:300;
+  font-variation-settings:"opsz" 24;
+  font-size:1rem;color:var(--cream);margin-top:6px;
+}
+
+/* ====== Body sections ====== */
+.body{padding:96px 64px;max-width:1280px;margin:0 auto}
+section{margin-bottom:96px}
+h2{
+  font-family:"Fraunces",serif;font-weight:300;
+  font-variation-settings:"opsz" 144;
+  font-size:clamp(34px,4vw,52px);line-height:1.05;
+  letter-spacing:-.018em;margin:0 0 24px;color:var(--ink);
+}
+h2 .it{font-style:italic;color:var(--champagne-deep)}
+h2 .pn{
+  display:block;font-family:"IBM Plex Mono",monospace;
+  font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-mute);margin-bottom:14px;font-weight:400;
+}
+h3{
+  font-family:"Fraunces",serif;font-weight:400;
+  font-variation-settings:"opsz" 24;
+  font-size:1.4rem;letter-spacing:-.005em;margin:36px 0 12px;
+}
+h4{
+  font-family:"IBM Plex Mono",monospace;font-size:.66rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--champagne-deep);
+  margin:0 0 10px;font-weight:500;
+}
+p{margin:0 0 18px;max-width:720px}
+.lede-body{
+  font-family:"Fraunces",serif;font-weight:300;
+  font-variation-settings:"opsz" 24;
+  font-size:1.25rem;line-height:1.5;color:var(--ink-soft);
+  max-width:760px;margin:0 0 48px;
+}
+em{color:var(--champagne-deep);font-style:italic;font-family:"Fraunces",serif;font-variation-settings:"opsz" 24}
+strong{font-weight:500;color:var(--ink)}
+
+/* ====== Palette swatches ====== */
+.palette{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0;
+}
+.swatch{
+  aspect-ratio:1;border-radius:6px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:14px;border:1px solid var(--line);
+  font-family:"IBM Plex Mono",monospace;font-size:.68rem;
+  letter-spacing:.04em;
+}
+.swatch .name{font-weight:500;text-transform:uppercase;letter-spacing:.14em;font-size:.62rem;margin-bottom:4px}
+.swatch .hex{font-size:.7rem;opacity:.85}
+@media (max-width:760px){.palette{grid-template-columns:repeat(2,1fr)}}
+
+/* ====== Cards / lockups ====== */
+.lockups{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0}
+.lockup-card{
+  border:1px solid var(--line);border-radius:8px;
+  padding:48px 36px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:24px;
+  min-height:260px;
+}
+.lockup-card.dark{background:var(--midnight);border-color:transparent}
+.lockup-card .small-mark{width:70px;height:70px}
+.lockup-card .wm{
+  font-family:"Inter",sans-serif;font-weight:200;
+  font-size:2.2rem;letter-spacing:-.025em;
+}
+.lockup-card .wm .w{color:var(--ink)}
+.lockup-card.dark .wm .w{color:var(--cream)}
+.lockup-card .wm .m{color:var(--champagne-deep)}
+.lockup-card.dark .wm .m{color:var(--champagne)}
+.lockup-card .label{
+  font-family:"IBM Plex Mono",monospace;font-size:.6rem;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);
+}
+.lockup-card.dark .label{color:rgba(244,237,224,.5)}
+@media (max-width:760px){.lockups{grid-template-columns:1fr}}
+
+/* ====== Vocabulary chips ====== */
+.vocab{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.vocab .chip{
+  padding:8px 14px;border-radius:999px;
+  border:1px solid var(--line);
+  font-family:"IBM Plex Mono",monospace;font-size:.7rem;
+  letter-spacing:.08em;color:var(--ink-soft);
+  background:var(--paper-2);
+}
+.vocab .chip.gold{background:var(--midnight);color:var(--champagne);border-color:var(--midnight)}
+
+/* tables */
+table{
+  width:100%;border-collapse:collapse;
+  font-family:"IBM Plex Mono",monospace;font-size:.78rem;
+  margin:18px 0;
+}
+table th,table td{
+  text-align:left;padding:10px 14px;
+  border-bottom:1px solid var(--line-soft);
+  vertical-align:top;
+}
+table th{
+  font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  font-size:.66rem;color:var(--ink-mute);
+  border-bottom-color:var(--line);
+}
+
+/* callouts */
+.callout{
+  background:var(--paper-2);
+  border-left:3px solid var(--champagne-deep);
+  padding:20px 24px;border-radius:0 4px 4px 0;
+  margin:24px 0;
+}
+.callout p{margin:0 0 10px}
+.callout p:last-child{margin-bottom:0}
+
+/* divider with mark */
+.div-mark{
+  display:flex;align-items:center;gap:16px;margin:64px 0;
+  justify-content:center;
+}
+.div-mark .ln{flex:0 0 80px;height:1px;background:var(--line)}
+.div-mark .m{width:24px;height:24px;opacity:.7}
+
+/* code */
+code{font-family:"IBM Plex Mono",monospace;font-size:.86em;background:var(--paper-2);padding:1px 5px;border-radius:3px;color:var(--ink)}
+
+@media (max-width:880px){
+  .hero{padding:48px 24px}
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .hero .meta-strip{grid-template-columns:repeat(2,1fr)}
+  .body{padding:64px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================== -->
+<!--    HERO — DARK NIGHT MODE       -->
+<!-- ============================== -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="lockup">
+        <!-- THE MARK · refined SVG -->
+        <svg class="mark-large" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="haze" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#c9a16a" stop-opacity=".18"/>
+              <stop offset="60%" stop-color="#c9a16a" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="100" cy="100" r="90" fill="url(#haze)"/>
+
+          <!-- four woven threads · curved ribbons crossing the field -->
+          <g stroke="#c9a16a" stroke-width="1.6" stroke-linecap="round" fill="none">
+            <!-- N–S thread, curving slightly to the east -->
+            <path d="M 100 22 C 108 60, 108 140, 100 178"/>
+            <!-- E–W thread, curving slightly south -->
+            <path d="M 22 100 C 60 108, 140 108, 178 100"/>
+            <!-- NE–SW thread, S-curve -->
+            <path d="M 155 45 C 130 78, 70 122, 45 155"/>
+            <!-- NW–SE thread, S-curve -->
+            <path d="M 45 45 C 70 78, 130 122, 155 155"/>
+          </g>
+
+          <!-- inner woven crosshatch · denser core -->
+          <g stroke="#c9a16a" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".75">
+            <path d="M 70 70 L 130 130"/>
+            <path d="M 130 70 L 70 130"/>
+            <path d="M 100 70 L 100 130"/>
+            <path d="M 70 100 L 130 100"/>
+          </g>
+
+          <!-- 8 endpoint dots · cardinal + intercardinal -->
+          <g fill="#c9a16a">
+            <circle cx="100" cy="22"  r="3.4"/>
+            <circle cx="100" cy="178" r="3.4"/>
+            <circle cx="22"  cy="100" r="3.4"/>
+            <circle cx="178" cy="100" r="3.4"/>
+            <circle cx="155" cy="45"  r="2.6"/>
+            <circle cx="45"  cy="155" r="2.6"/>
+            <circle cx="45"  cy="45"  r="2.6"/>
+            <circle cx="155" cy="155" r="2.6"/>
+          </g>
+
+          <!-- subtle compass-rose ticks -->
+          <g stroke="#c9a16a" stroke-width=".6" opacity=".35">
+            <line x1="100" y1="6"  x2="100" y2="12"/>
+            <line x1="100" y1="188" x2="100" y2="194"/>
+            <line x1="6"   y1="100" x2="12"  y2="100"/>
+            <line x1="188" y1="100" x2="194" y2="100"/>
+          </g>
+
+          <!-- center node · the "you are here" -->
+          <circle cx="100" cy="100" r="3.5" fill="#c9a16a"/>
+          <circle cx="100" cy="100" r="9" stroke="#c9a16a" stroke-width=".6" fill="none" opacity=".5"/>
+        </svg>
+
+        <!-- WORDMARK -->
+        <div class="wordmark">
+          <span class="w">woven</span><span class="m">map</span>
+        </div>
+      </div>
+
+      <div class="tag"><span class="ln"></span>See what's really going on</div>
+
+      <h1>Everyone's running on a hidden web of people, projects and promises. <span class="it">WovenMap shows you yours.</span></h1>
+      <p class="lede">A private decision-intelligence app for the things you can't keep in your head. The map you didn't know you were walking on, drawn from the conversations and documents and quiet promises of an actual life.</p>
+
+      <div class="meta-strip">
+        <div><div class="k">name</div><div class="v">WovenMap</div></div>
+        <div><div class="k">wordmark</div><div class="v">wovenmap</div></div>
+        <div><div class="k">domain</div><div class="v">wovenmap.com</div></div>
+        <div><div class="k">studio</div><div class="v">Base Alpha</div></div>
+      </div>
+    </div>
+
+    <!-- right column: large mark -->
+    <div style="display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:min(80%,420px);height:auto;opacity:.92">
+        <defs>
+          <radialGradient id="haze2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#c9a16a" stop-opacity=".25"/>
+            <stop offset="60%" stop-color="#c9a16a" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="100" cy="100" r="90" fill="url(#haze2)"/>
+        <g stroke="#c9a16a" stroke-width="1.6" stroke-linecap="round" fill="none">
+          <path d="M 100 22 C 108 60, 108 140, 100 178"/>
+          <path d="M 22 100 C 60 108, 140 108, 178 100"/>
+          <path d="M 155 45 C 130 78, 70 122, 45 155"/>
+          <path d="M 45 45 C 70 78, 130 122, 155 155"/>
+        </g>
+        <g stroke="#c9a16a" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".75">
+          <path d="M 70 70 L 130 130"/>
+          <path d="M 130 70 L 70 130"/>
+          <path d="M 100 70 L 100 130"/>
+          <path d="M 70 100 L 130 100"/>
+        </g>
+        <g fill="#c9a16a">
+          <circle cx="100" cy="22" r="3.4"/><circle cx="100" cy="178" r="3.4"/>
+          <circle cx="22" cy="100" r="3.4"/><circle cx="178" cy="100" r="3.4"/>
+          <circle cx="155" cy="45" r="2.6"/><circle cx="45" cy="155" r="2.6"/>
+          <circle cx="45" cy="45" r="2.6"/><circle cx="155" cy="155" r="2.6"/>
+        </g>
+        <circle cx="100" cy="100" r="3.5" fill="#c9a16a"/>
+        <circle cx="100" cy="100" r="9" stroke="#c9a16a" stroke-width=".6" fill="none" opacity=".5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!--    BODY · style guide           -->
+<!-- ============================== -->
+<div class="body">
+
+<section>
+  <h2><span class="pn">§01 · the name</span>WovenMap.</h2>
+  <p class="lede-body">Capital W. Capital M. The wordmark renders lowercase — <code>wovenmap</code> — but in body copy and any written reference, the brand is written <strong>WovenMap</strong>. One token, two halves, joined.</p>
+
+  <div class="lockups">
+    <div class="lockup-card dark">
+      <svg class="small-mark" viewBox="0 0 200 200" fill="none">
+        <g stroke="#c9a16a" stroke-width="2.2" stroke-linecap="round" fill="none">
+          <path d="M 100 22 C 108 60, 108 140, 100 178"/>
+          <path d="M 22 100 C 60 108, 140 108, 178 100"/>
+          <path d="M 155 45 C 130 78, 70 122, 45 155"/>
+          <path d="M 45 45 C 70 78, 130 122, 155 155"/>
+        </g>
+        <g stroke="#c9a16a" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".75">
+          <path d="M 70 70 L 130 130"/><path d="M 130 70 L 70 130"/>
+          <path d="M 100 70 L 100 130"/><path d="M 70 100 L 130 100"/>
+        </g>
+        <g fill="#c9a16a">
+          <circle cx="100" cy="22" r="4"/><circle cx="100" cy="178" r="4"/>
+          <circle cx="22" cy="100" r="4"/><circle cx="178" cy="100" r="4"/>
+          <circle cx="155" cy="45" r="3"/><circle cx="45" cy="155" r="3"/>
+          <circle cx="45" cy="45" r="3"/><circle cx="155" cy="155" r="3"/>
+        </g>
+        <circle cx="100" cy="100" r="4" fill="#c9a16a"/>
+      </svg>
+      <div class="wm"><span class="w">woven</span><span class="m">map</span></div>
+      <div class="label">Night · primary</div>
+    </div>
+    <div class="lockup-card">
+      <svg class="small-mark" viewBox="0 0 200 200" fill="none">
+        <g stroke="#1a1612" stroke-width="2.2" stroke-linecap="round" fill="none">
+          <path d="M 100 22 C 108 60, 108 140, 100 178"/>
+          <path d="M 22 100 C 60 108, 140 108, 178 100"/>
+          <path d="M 155 45 C 130 78, 70 122, 45 155"/>
+          <path d="M 45 45 C 70 78, 130 122, 155 155"/>
+        </g>
+        <g stroke="#1a1612" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".75">
+          <path d="M 70 70 L 130 130"/><path d="M 130 70 L 70 130"/>
+          <path d="M 100 70 L 100 130"/><path d="M 70 100 L 130 100"/>
+        </g>
+        <g fill="#1a1612">
+          <circle cx="100" cy="22" r="4"/><circle cx="100" cy="178" r="4"/>
+          <circle cx="22" cy="100" r="4"/><circle cx="178" cy="100" r="4"/>
+          <circle cx="155" cy="45" r="3"/><circle cx="45" cy="155" r="3"/>
+          <circle cx="45" cy="45" r="3"/><circle cx="155" cy="155" r="3"/>
+        </g>
+        <circle cx="100" cy="100" r="4" fill="#1a1612"/>
+      </svg>
+      <div class="wm"><span class="w">woven</span><span class="m">map</span></div>
+      <div class="label">Day · editorial</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>Spelling rules.</strong> "WovenMap" in writing (camel-case, two capitals). "wovenmap" in the wordmark (lowercase, all-one). <strong>Never</strong>: "Wovenmap", "Woven Map", "Woven-Map", "WOVENMAP" (only acceptable shouted in tagline ALL-CAPS lockup). The product is one word, not two.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="pn">§02 · the locked sentence</span>What we say first.</h2>
+  <p class="lede-body">The brand has one positioning sentence — kept verbatim across every public surface — and one tagline, kept as a refrain.</p>
+
+  <div style="background:var(--midnight);color:var(--cream);padding:48px 36px;border-radius:8px;margin:24px 0">
+    <h4 style="color:var(--champagne)">The locked sentence</h4>
+    <p style="font-family:Fraunces;font-weight:300;font-variation-settings:'opsz' 144;font-size:clamp(24px,2.6vw,34px);line-height:1.25;letter-spacing:-.012em;color:var(--cream);max-width:880px;margin:14px 0 0">
+      Everyone's running on a hidden web of people, projects and promises. <em style="color:var(--champagne)">WovenMap shows you yours.</em>
+    </p>
+  </div>
+
+  <div style="background:var(--paper-2);padding:36px 32px;border-radius:8px;margin:24px 0">
+    <h4>The tagline</h4>
+    <p style="font-family:Fraunces;font-weight:300;font-variation-settings:'opsz' 144;font-size:clamp(28px,3.2vw,42px);line-height:1.1;letter-spacing:-.014em;margin:14px 0 0">
+      <em>See what's really going on.</em>
+    </p>
+    <p style="margin-top:16px;color:var(--ink-soft);max-width:680px">
+      The tagline is plain-spoken on purpose. It is not a metaphor. It is what the user is actually asking when they pick up the app: <em>what is really going on</em>. The brand answers that question with the quiet honesty of a good map.
+    </p>
+  </div>
+
+  <h3>Acceptable variants</h3>
+  <ul>
+    <li><em>"The map you didn't know you were walking on."</em> — long-form headline.</li>
+    <li><em>"WovenMap. See your weave."</em> — short headline lockup.</li>
+    <li><em>"A private map of an actual life."</em> — explainer line.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="pn">§03 · the palette</span>Two modes, one family.</h2>
+  <p class="lede-body">The brand operates in <em>day</em> and <em>night</em>. Day is the editorial register — long-form documents, the spec, the guide, in-app reading surfaces. Night is the hero register — landing pages, brochure, formal lockups, the moments where the brand wants gravity.</p>
+
+  <h3>Day · editorial palette</h3>
+  <div class="palette">
+    <div class="swatch" style="background:#faf6ee;color:#1a1612"><div class="name">paper</div><div class="hex">#FAF6EE</div></div>
+    <div class="swatch" style="background:#f1ebdc;color:#1a1612"><div class="name">paper · 2</div><div class="hex">#F1EBDC</div></div>
+    <div class="swatch" style="background:#1a1612;color:#faf6ee"><div class="name">ink</div><div class="hex">#1A1612</div></div>
+    <div class="swatch" style="background:#c2761b;color:#faf6ee"><div class="name">amber</div><div class="hex">#C2761B</div></div>
+  </div>
+
+  <h3>Night · hero palette <span style="font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.16em;color:var(--ink-mute);text-transform:uppercase;margin-left:8px">new</span></h3>
+  <div class="palette">
+    <div class="swatch" style="background:#0e1729;color:#f4ede0"><div class="name">midnight</div><div class="hex">#0E1729</div></div>
+    <div class="swatch" style="background:#172238;color:#f4ede0"><div class="name">midnight · 2</div><div class="hex">#172238</div></div>
+    <div class="swatch" style="background:#f4ede0;color:#0e1729"><div class="name">cream</div><div class="hex">#F4EDE0</div></div>
+    <div class="swatch" style="background:#c9a16a;color:#0e1729"><div class="name">champagne</div><div class="hex">#C9A16A</div></div>
+  </div>
+
+  <h3>Lens accents (kept · used in the four-lens system)</h3>
+  <div class="palette">
+    <div class="swatch" style="background:#c2557a;color:#faf6ee"><div class="name">rose · blindspot</div><div class="hex">#C2557A</div></div>
+    <div class="swatch" style="background:#a05a2c;color:#faf6ee"><div class="name">rust · drift</div><div class="hex">#A05A2C</div></div>
+    <div class="swatch" style="background:#2d6e6a;color:#faf6ee"><div class="name">teal · radar</div><div class="hex">#2D6E6A</div></div>
+    <div class="swatch" style="background:#6b7d4a;color:#faf6ee"><div class="name">moss · leverage</div><div class="hex">#6B7D4A</div></div>
+  </div>
+
+  <div class="callout">
+    <p><strong>Pairing rule.</strong> Day and night palettes do not mix in the same surface. Pick one register per page. The lens accents work on both. Champagne is the night-mode amber; amber is the day-mode champagne. Use one or the other, not both, in any single lockup.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="pn">§04 · typography</span>The same three faces.</h2>
+  <p class="lede-body">Typography does not change with the rebrand. The three faces that earned their place in the existing language stay exactly where they are. <em>Inter</em> is added — quietly, only for the wordmark itself.</p>
+
+  <table>
+    <thead><tr><th>Role</th><th>Face</th><th>Used for</th></tr></thead>
+    <tbody>
+      <tr><td>Display</td><td><strong>Fraunces</strong> — variable, opsz 144, weights 300–500, italics</td><td>Headlines · pull-quotes · the locked sentence</td></tr>
+      <tr><td>Body</td><td><strong>Newsreader</strong> — variable, opsz 16–24, 300–500</td><td>Long-form prose · spec · brand explanations</td></tr>
+      <tr><td>Metadata</td><td><strong>IBM Plex Mono</strong> — 300, 400, 500</td><td>Captions · IDs · tables · technical surfaces</td></tr>
+      <tr><td>Wordmark</td><td><strong>Inter</strong> — weight 200, letter-spacing −.04em <span style="font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.16em;color:var(--ink-mute);text-transform:uppercase;margin-left:8px">new</span></td><td>Wordmark only · never body</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="pn">§05 · the mark</span>Woven crosshatch · eight bearings.</h2>
+  <p class="lede-body">Four threads cross through a centre and end in eight bearings — the cardinal and intercardinal points of a compass. Where the early concept showed a flat asterisk, the production mark adds <em>weave</em>: each thread curves slightly, suggesting fabric on a frame. The centre is a single dot, the user's <em>you-are-here</em>.</p>
+
+  <div class="lockups">
+    <div class="lockup-card dark" style="min-height:320px">
+      <svg viewBox="0 0 200 200" fill="none" style="width:140px;height:140px">
+        <defs>
+          <radialGradient id="markhaze" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#c9a16a" stop-opacity=".22"/>
+            <stop offset="60%" stop-color="#c9a16a" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="100" cy="100" r="90" fill="url(#markhaze)"/>
+        <g stroke="#c9a16a" stroke-width="2" stroke-linecap="round" fill="none">
+          <path d="M 100 22 C 108 60, 108 140, 100 178"/>
+          <path d="M 22 100 C 60 108, 140 108, 178 100"/>
+          <path d="M 155 45 C 130 78, 70 122, 45 155"/>
+          <path d="M 45 45 C 70 78, 130 122, 155 155"/>
+        </g>
+        <g stroke="#c9a16a" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".75">
+          <path d="M 70 70 L 130 130"/><path d="M 130 70 L 70 130"/>
+          <path d="M 100 70 L 100 130"/><path d="M 70 100 L 130 100"/>
+        </g>
+        <g fill="#c9a16a">
+          <circle cx="100" cy="22" r="4"/><circle cx="100" cy="178" r="4"/>
+          <circle cx="22" cy="100" r="4"/><circle cx="178" cy="100" r="4"/>
+          <circle cx="155" cy="45" r="3"/><circle cx="45" cy="155" r="3"/>
+          <circle cx="45" cy="45" r="3"/><circle cx="155" cy="155" r="3"/>
+        </g>
+        <g stroke="#c9a16a" stroke-width=".6" opacity=".4">
+          <line x1="100" y1="6" x2="100" y2="12"/><line x1="100" y1="188" x2="100" y2="194"/>
+          <line x1="6" y1="100" x2="12" y2="100"/><line x1="188" y1="100" x2="194" y2="100"/>
+        </g>
+        <circle cx="100" cy="100" r="4" fill="#c9a16a"/>
+        <circle cx="100" cy="100" r="10" stroke="#c9a16a" stroke-width=".6" fill="none" opacity=".4"/>
+      </svg>
+      <div class="label">Production · 200 × 200</div>
+    </div>
+    <div class="lockup-card" style="min-height:320px">
+      <svg viewBox="0 0 200 200" fill="none" style="width:60px;height:60px">
+        <g stroke="#1a1612" stroke-width="3" stroke-linecap="round" fill="none">
+          <path d="M 100 22 C 108 60, 108 140, 100 178"/>
+          <path d="M 22 100 C 60 108, 140 108, 178 100"/>
+          <path d="M 155 45 C 130 78, 70 122, 45 155"/>
+          <path d="M 45 45 C 70 78, 130 122, 155 155"/>
+        </g>
+        <g fill="#1a1612">
+          <circle cx="100" cy="22" r="6"/><circle cx="100" cy="178" r="6"/>
+          <circle cx="22" cy="100" r="6"/><circle cx="178" cy="100" r="6"/>
+          <circle cx="155" cy="45" r="4.5"/><circle cx="45" cy="155" r="4.5"/>
+          <circle cx="45" cy="45" r="4.5"/><circle cx="155" cy="155" r="4.5"/>
+        </g>
+        <circle cx="100" cy="100" r="6" fill="#1a1612"/>
+      </svg>
+      <div class="label">Favicon · simplified · 32–64px</div>
+    </div>
+  </div>
+
+  <h3>Construction rules</h3>
+  <ul>
+    <li>Four threads, each a single Bézier curve from one bearing to the opposite.</li>
+    <li>Inner crosshatch — four short straight strokes — gives the centre its <em>woven</em> feel; drops on favicon size.</li>
+    <li>Eight endpoint dots: cardinal (N, E, S, W) at <code>r=4</code>; intercardinal (NE, SE, SW, NW) at <code>r=3</code>. The hierarchy reads as a compass.</li>
+    <li>Centre dot at <code>r=4</code> with optional faint <code>r=10</code> ring — the <em>you-are-here</em>.</li>
+    <li>Stroke weights: <code>2.0</code> on the four threads, <code>1.5</code> on the crosshatch. Halve at small sizes.</li>
+    <li>Optional outer compass ticks at the four cardinals — drop below 100px.</li>
+    <li>Single-colour mark only. Never bicolour. The colour is champagne on dark, ink on light.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="pn">§06 · the noun "weave"</span>What the user has.</h2>
+  <p class="lede-body">The product is <strong>WovenMap</strong>. The <em>thing</em> the product shows the user — the artefact, the living document — is <strong>their weave</strong>. The two are not the same. WovenMap is the instrument. Your weave is the music.</p>
+
+  <table>
+    <thead><tr><th>Term</th><th>Refers to</th><th>Capitalisation</th></tr></thead>
+    <tbody>
+      <tr><td>WovenMap</td><td>The product · the company surface · the thing you sign in to</td><td>Always WovenMap (W, M)</td></tr>
+      <tr><td>your weave</td><td>The user's living web of people, projects, promises</td><td>Lowercase noun</td></tr>
+      <tr><td>the web</td><td>Synonym for the user's weave; preferred in instruction copy</td><td>Lowercase noun</td></tr>
+      <tr><td>a thing</td><td>A node in the weave (person, project, client, vendor, promise, risk)</td><td>Lowercase</td></tr>
+      <tr><td>a thread</td><td>A connection between two things</td><td>Lowercase</td></tr>
+      <tr><td>a lens</td><td>An analytic view (Blindspot, Drift, Radar, Leverage)</td><td>Lens names capitalised; "a lens" lowercase</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2><span class="pn">§07 · cartographic vocabulary</span>What the new metaphor adds.</h2>
+  <p class="lede-body">The shift from <em>weave</em> to <em>WovenMap</em> brings a second layer of imagery — cartography — alongside the textile language we already own. The two layers compound; they don't compete.</p>
+
+  <h3>Words available to the brand</h3>
+  <div class="vocab">
+    <span class="chip gold">a bearing</span>
+    <span class="chip gold">a sounding</span>
+    <span class="chip gold">a contour</span>
+    <span class="chip gold">a legend</span>
+    <span class="chip gold">a scale</span>
+    <span class="chip gold">a chart</span>
+    <span class="chip gold">a compass rose</span>
+    <span class="chip gold">a meridian</span>
+    <span class="chip gold">an isobar</span>
+    <span class="chip gold">a marker</span>
+    <span class="chip gold">a route</span>
+    <span class="chip gold">a station</span>
+  </div>
+
+  <h3>Where they show up</h3>
+  <ul>
+    <li><strong>Lens deep-views</strong> get a faint contour-line backdrop (topographic, not decorative).</li>
+    <li><strong>Q&amp;A chat</strong> draws on the <em>sounding</em> metaphor — "let's take a sounding on this."</li>
+    <li><strong>Digest narrative</strong> uses cartographic prose: <em>"This week your weave shifted bearing on three threads."</em></li>
+    <li><strong>The web view</strong> may show a faint compass-rose at far zoom; bearings (N, E, S, W) become navigation affordances.</li>
+    <li><strong>Onboarding</strong> uses route language — <em>first leg</em>, <em>waypoint</em>, <em>landfall</em>.</li>
+  </ul>
+
+  <h3>Where they don't</h3>
+  <ul>
+    <li>Body copy in technical specs (modules-deep, ai-interactions, data-model). The textile and the technical do the work; cartography is a flavour, not a swap.</li>
+    <li>Error states. ("You've gone off course" reads as scolding; keep "Something didn't work — try again.")</li>
+    <li>Marketing copy that risks sounding nautical-cosplay.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="pn">§08 · voice &amp; tone</span>Plain-spoken. Slightly literary. Never glib.</h2>
+  <p class="lede-body">The brand voice does not change with the rebrand. The instinct that ran through every existing document still runs through this one: <em>say the true thing, calmly, in the fewest words it deserves.</em></p>
+
+  <div class="lockups">
+    <div class="lockup-card" style="align-items:flex-start;text-align:left;min-height:auto;padding:32px 28px">
+      <h4>We do</h4>
+      <ul style="margin:0;padding-left:18px;font-family:Newsreader;font-size:.95rem;color:var(--ink-soft);line-height:1.55">
+        <li>Use specific nouns. <em>"Your weave"</em> not <em>"your data."</em></li>
+        <li>Use plain verbs. <em>"Shows."</em> Not <em>"empowers."</em></li>
+        <li>Stay quiet. Whitespace is part of the voice.</li>
+        <li>Trust the reader. Don't over-explain a metaphor that's working.</li>
+        <li>Allow a touch of literary cadence in headlines; never in error states.</li>
+      </ul>
+    </div>
+    <div class="lockup-card" style="align-items:flex-start;text-align:left;min-height:auto;padding:32px 28px">
+      <h4>We don't</h4>
+      <ul style="margin:0;padding-left:18px;font-family:Newsreader;font-size:.95rem;color:var(--ink-soft);line-height:1.55">
+        <li>Use words like "empower", "unleash", "supercharge", "AI-powered."</li>
+        <li>Use exclamation marks. (Anywhere. Ever.)</li>
+        <li>Personify the AI. The AI is a tool, not a friend.</li>
+        <li>Promise certainty. Promise <em>better-than-nothing</em>; deliver <em>most-of-the-time</em>.</li>
+        <li>Lean on the cartography metaphor when textile language is already saying it.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="pn">§09 · application</span>How it lands.</h2>
+
+  <h3>Hero / brochure surfaces</h3>
+  <p>Night palette. Champagne mark. Locked sentence in Fraunces 300, italic for the WovenMap fragment. Tagline below in Inter caps, ledger-spaced. White space is the design.</p>
+
+  <h3>Long-form spec / editorial documents</h3>
+  <p>Day palette. Ink mark. Newsreader body, Fraunces headlines, IBM Plex Mono metadata. Existing companion docs (<code>requirements.html</code>, <code>modules-deep.html</code>, <code>ai-interactions.html</code>, <code>data-model.html</code>, <code>inter-weave.html</code>, <code>build-plan.html</code>, <code>naming-deep-dive.html</code>) all stay in this register. Only the brand name changes.</p>
+
+  <h3>In-app surfaces</h3>
+  <p>Day palette by default; user-toggle to night. Champagne becomes the in-app accent in night mode (not amber). The four lens accents are unchanged in either mode.</p>
+
+  <h3>Marketing collateral</h3>
+  <p>Mostly night palette. Photography (when used) is shot in low warm light to harmonise with champagne. No stock imagery. Illustration only — line work, threads, contour, compass.</p>
+</section>
+
+<div class="div-mark">
+  <div class="ln"></div>
+  <svg class="m" viewBox="0 0 200 200" fill="none">
+    <g stroke="#1a1612" stroke-width="6" stroke-linecap="round" fill="none" opacity=".5">
+      <path d="M 100 22 C 108 60, 108 140, 100 178"/>
+      <path d="M 22 100 C 60 108, 140 108, 178 100"/>
+      <path d="M 155 45 C 130 78, 70 122, 45 155"/>
+      <path d="M 45 45 C 70 78, 130 122, 155 155"/>
+    </g>
+    <circle cx="100" cy="100" r="10" fill="#1a1612" opacity=".5"/>
+  </svg>
+  <div class="ln"></div>
+</div>
+
+<section>
+  <h2><span class="pn">§10 · the rename · what changed</span>From Weave to WovenMap.</h2>
+  <p class="lede-body">A short list, for the avoidance of confusion.</p>
+
+  <table>
+    <thead><tr><th>Old</th><th>New</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Weave (the product)</td><td>WovenMap</td><td>Always camel-case in writing. Wordmark lowercase.</td></tr>
+      <tr><td>weave.app, weave.os</td><td>wovenmap.com (.co, .net owned)</td><td>Primary domain is .com.</td></tr>
+      <tr><td>"Weave OS"</td><td>WovenMap</td><td>The "OS" suffix is dropped — it was always provisional.</td></tr>
+      <tr><td>your weave</td><td>your weave</td><td><strong>Unchanged.</strong> The user's artefact keeps its noun.</td></tr>
+      <tr><td>the web</td><td>the web</td><td>Unchanged.</td></tr>
+      <tr><td>Inter-weave (the federation feature)</td><td>Inter-weave</td><td>Unchanged. Uses the kept noun "weave," not the product name.</td></tr>
+      <tr><td>Tagline / locked sentence</td><td>"Everyone's running on a hidden web of people, projects and promises. WovenMap shows you yours."</td><td>The product-name token is the only swap.</td></tr>
+      <tr><td>Tagline · short</td><td>"See what's really going on."</td><td>New. Plain. The brand answers the user's actual question.</td></tr>
+      <tr><td>Studio (Base Alpha)</td><td>Base Alpha</td><td>Unchanged in this pass. Re-visitable separately.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+</div>
+
+</body>
+</html>
