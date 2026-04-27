@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WovenMap — coming soon</title>
+    <meta name="description" content="You're running on a map you can't see. WovenMap is what happens when you can finally see it." />
+    <meta name="theme-color" content="#0a1020" />
+
+    <!-- Favicon set -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+    <!-- OpenGraph / Twitter -->
+    <meta property="og:title" content="WovenMap — coming soon" />
+    <meta property="og:description" content="You're running on a map you can't see." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wovenmap.com" />
+    <meta property="og:image" content="assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="WovenMap — coming soon" />
+    <meta name="twitter:description" content="You're running on a map you can't see." />
+    <meta name="twitter:image" content="assets/og-image.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+      integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+      integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
+      integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: #0a1020;
+        color: #f4ede0;
+        font-family: 'Inter', -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      *, *::before, *::after { box-sizing: border-box; }
+      a { color: inherit; }
+    </style>
+
+    <script type="text/babel" src="tweaks-panel.jsx"></script>
+    <script>
+      // ─── WovenMap site config ─────────────────────────────────────────────
+      // Paste your Web3Forms access key below to start receiving signup emails.
+      // Get one free at https://web3forms.com (no account, takes 30 seconds).
+      // While this is empty, submissions still save locally — export from the
+      // hidden admin panel (Ctrl/Cmd + Shift + E).
+      window.WM_CONFIG = {
+        web3formsKey: "5c47b44b-5e2a-48e9-843e-e2c7ac9eeb64",
+      };
+    </script>
+    <script type="text/babel" src="signup-store.jsx"></script>
+    <script type="text/babel" src="signup-form.jsx"></script>
+    <script type="text/babel" src="admin-panel.jsx"></script>
+    <script type="text/babel" src="landing.jsx"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

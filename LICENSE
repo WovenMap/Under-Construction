@@ -1,0 +1,91 @@
+Commercial Restricted License (CRL) v1.1
+=========================================
+
+Copyright (c) 2026 WovenMap. All rights reserved.
+
+The software, source code, design assets, configuration, written copy,
+trademarks (registered or unregistered), service marks, logos, brand names,
+and all associated materials in this repository (collectively, the "Work")
+are the exclusive property of WovenMap and its licensors.
+
+This is a "source-available" repository. Public visibility of the Work does
+NOT grant any license, right, title, or interest in or to the Work, except
+as expressly granted below.
+
+1. PERMITTED USE
+
+   You are permitted to:
+
+   (a) View the Work in this repository for personal, non-commercial,
+       informational purposes.
+   (b) Reference, link to, or quote brief excerpts of the Work in good-faith
+       commentary, journalism, or academic writing, with appropriate
+       attribution to WovenMap.
+
+2. PROHIBITED USE
+
+   Without the prior, express, written permission of WovenMap, you MAY NOT:
+
+   (a) Copy, fork, clone (other than read-only personal viewing), reproduce,
+       republish, distribute, sublicense, sell, rent, or lease the Work, in
+       whole or in part.
+   (b) Modify, adapt, translate, port, decompile, reverse-engineer, or create
+       derivative works based on the Work.
+   (c) Use the Work, or any portion of it, in any commercial product,
+       service, or offering.
+   (d) Use the Work to train, fine-tune, evaluate, benchmark, or otherwise
+       develop any machine-learning or artificial-intelligence system,
+       model, or dataset.
+   (e) Use the WovenMap name, logo, wordmark, brand identity, or any
+       confusingly similar mark, in any context that suggests endorsement,
+       affiliation, sponsorship, or origin.
+   (f) Remove, obscure, or alter any copyright, trademark, license, or
+       other proprietary notice contained in the Work.
+
+3. TRADEMARKS
+
+   "WovenMap", the WovenMap wordmark, the WovenMap living-mark logo, and
+   any related taglines, slogans, and visual identity elements are
+   trademarks of WovenMap, asserted under common-law unregistered trademark
+   rights (denoted by the "™" symbol), with a present intent to register.
+   The grant of source visibility under this License is NOT a grant of any
+   trademark rights. See TRADEMARKS.md for the full mark list.
+
+4. NO WARRANTY
+
+   THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+
+5. LIMITATION OF LIABILITY
+
+   IN NO EVENT SHALL WOVENMAP, ITS PRINCIPALS, EMPLOYEES, OR CONTRIBUTORS
+   BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN
+   ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN
+   CONNECTION WITH THE WORK OR THE USE OR OTHER DEALINGS IN THE WORK.
+
+6. TERMINATION
+
+   Any breach of this License automatically terminates all rights granted
+   under Section 1, without prejudice to WovenMap's other remedies. Upon
+   termination, you must cease all use of the Work and destroy any copies
+   in your possession.
+
+7. CONTACT FOR PERMISSIONS
+
+   To request a license for any use beyond Section 1, contact:
+
+       hello@wovenmap.com
+
+8. GOVERNING LAW
+
+   This License is governed by the laws of New Zealand, without regard to
+   its conflict-of-laws principles. Any dispute arising under this License
+   shall be resolved in the courts of New Zealand.
+
+──────────────────────────────────────────────────────────────────────────
+This License is a custom commercial-restrictive license drafted for
+WovenMap. It has not been reviewed by counsel for your jurisdiction or
+fact pattern, and is not legal advice. Consult a qualified attorney for
+binding legal review.
+──────────────────────────────────────────────────────────────────────────
